@@ -1,0 +1,70 @@
+{% load static %}
+{% include 'PortfolioWebApp/includes/base.html' %}
+
+
+
+<!-- Header -->
+{% include 'PortfolioWebApp/includes/header.html' %}
+
+{% block content %}
+<div class="container container-contact">
+    <div class="container-form">
+        <div class="contact">
+            <h2 class="contact">Contáctame</h2>
+            <p class="contact-text">Gracias por tomarse el tiempo para comunicarse.<span>¿Cómo puedo
+                    ayudarte</span>
+                hoy?</p>
+
+            <form action="#" id="enviar-mail" method="post"> {% csrf_token %}
+
+                <div class="ipt_animation">
+                    <input type="text" class="nombre" id="nombre" placeholder="Nombre" name="nombre">
+                </div>
+
+                <div class="ipt_animation">
+                    <input type="email" class="correo" id="email" placeholder="Correo" name="email">
+                </div>
+
+                <div class="ipt_animation">
+                    <input type="text" class="asunto" id="asunto" placeholder="Asunto" name="asunto">
+                </div>
+
+                <div class="ipt_animation">
+                    <textarea name="mensaje" class="mensaje" placeholder="Mensaje" id="mensaje-textarea" cols="30"
+                        rows="10"></textarea>
+                </div>
+
+                <div class="btnform">
+                    <button type="submit" class="btnEnviar" id="btnEnviar">Enviar</button>
+                </div>
+            </form>
+            <p class="exito">El mensaje se envió correctamente</p>
+        </div>
+
+        <div class="map animate fadeInUp" id="scrollReveal">
+            <div class="mapa" id="mapa"></div>
+
+            <div class="ubicacion-contacto">
+                <span>Christopher Quiroz,</span>
+                <span>Santander, Cantabria - ES</span>
+                <span><i class="fas fa-at" style="color: #25ca7f"></i>: cquirozmendivel@gmail.com</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+
+{% include 'PortfolioWebApp/includes/footer.html' %}
+
+{% block extra_js %}
+<!-- Script google map api -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL0PD4vVNrISwvy2oHozgJg5ZYiFgekFA&callback=initMap&v=weekly&channel=2">
+</script>
+{% endblock extra_js %}

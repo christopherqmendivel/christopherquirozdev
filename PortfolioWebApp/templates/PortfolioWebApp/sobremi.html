@@ -1,0 +1,219 @@
+{% load static %}
+{% include 'PortfolioWebApp/includes/base.html' %}
+
+{% block content %}
+
+<!-- Header -->
+{% include 'PortfolioWebApp/includes/header.html' %}
+
+<section class="info_sobre_mi">
+    <div class="sobre_mi">
+        <h1 class="me">Sobre Mí</h1>
+        <div class="border-h1">
+            <div class="line-left">
+                <span class="line-left"></span>
+            </div>
+            <div class="icon-infinite">
+                <i class="fas fa-infinity"></i>
+            </div>
+
+            <div class="line-right">
+                <span class="line-right"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <article class="text_sobre_mi">
+        <div class="img_perfil">
+            <img class="img_me" src="{% static 'PortfolioWebApp/img/chris_avatar.png' %}" alt="developer image">
+        </div>
+
+        <div class="text_perfil">
+            <p class="nombre"><strong>Christopher Quiroz</strong></p>
+            <p class="ubicacion"><i class="fas fa-map-marked-alt"></i> Santander, Cantabria - ES</p>
+            <p class="info">
+                Soy estudiante de 2º año en Desarrollo de Aplicaciones Web. Me considero alguien apasionado por
+                la programación enfocada en el Desarrollo Web, especialmente cuando se trata de Front
+                end.
+            </p>
+
+            <p class="info animate_m" id="scrollReveal">
+                Me defino como una persona autodidacta, la mayoria de mis conocimientos en
+                programación los he adquirido de esta manera, ya sea mediante vídeos, guías o prácticas
+                personales. Me gusta aprender cosas nuevas todos los días e indagar sobre temas que me
+                entusiasman.
+            </p>
+
+            <p class="info animate_m" id="scrollReveal">
+                En mi tiempo libre me gusta divertirme con mis amigos en alguno que otro videojuego, así como
+                escuchar música y hacer deportes.
+            </p>
+
+            <p class="btn-descargar-cv"">
+                        <div class=" button-group">
+                <a href="{% static 'PortfolioWebApp/docs/christopher_cv.pdf' %}" class="text" download="">Descargar CV</a>
+                <div class="icon-cv">
+                    <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                </div>
+        </div>
+        </p>
+        </div>
+    </article>
+
+    <article class="intereses">
+        <div class="interes">
+            <h2 class="hobbies">Mis hobbies</h2>
+            <div class="border-h1">
+                <div class="line-left">
+                    <span class="line-left"></span>
+                </div>
+                <div class="icon-infinite">
+                    <i class="fas fa-infinity"></i>
+                </div>
+
+                <div class="line-right">
+                    <span class="line-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="hobbies animate fadeInUp" id="scrollReveal">
+            <div class="hobbies-bloque-1">
+                <div class="hobbie">
+                    <div class="icon-hobbie">
+                        <i class="fas fa-headphones-alt"></i>
+                    </div>
+                    <div class="text-hobbie">
+                        <span class="text-hobbie">Música</span>
+                    </div>
+                </div>
+
+                <div class="hobbie">
+                    <div class="icon-hobbie">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <div class="text-hobbie">
+                        <span class="text-hobbie">Bicicleta</span>
+                    </div>
+                </div>
+
+                <div class="hobbie">
+                    <div class="icon-hobbie">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="text-hobbie">
+                        <span class="text-hobbie">Videojuegos</span>
+                    </div>
+                </div>
+
+                <div class="hobbie">
+                    <div class="icon-hobbie">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="text-hobbie">
+                        <span class="text-hobbie">Películas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hobbies-bloque-2">
+                <div class="hobbie">
+                    <div class="icon-hobbie">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="text-hobbie">
+                        <span class="text-hobbie">Leer</span>
+                    </div>
+                </div>
+
+                <div class="hobbie">
+                    <div class="icon-hobbie">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <div class="text-hobbie">
+                        <span class="text-hobbie">Senderismo</span>
+                    </div>
+                </div>
+
+                <div class="hobbie">
+                    <div class="icon-hobbie">
+                        <i class="fa-solid fa-fish-fins"></i>
+                    </div>
+                    <div class="text-hobbie">
+                        <span class="text-hobbie">Pescar</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </article>
+
+    <article class="habilidades">
+        <div class="habilidades">
+            <h2 class="habilidad">Habilidades</h2>
+            <div class="border-h1">
+                <div class="line-left">
+                    <span class="line-left"></span>
+                </div>
+                <div class="icon-infinite">
+                    <i class="fas fa-infinity"></i>
+                </div>
+
+                <div class="line-right">
+                    <span class="line-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="hobbies habilidad animate fadeInUp" id="scrollReveal">
+
+            <div class="contenido-habilidad html" id="scrollReveal">
+                <div class="skill-radius">
+                    <i class="fab fa-html5" title="HTML"></i>
+                </div>
+                <p class="texto-habilidad">HTML 5</p>
+            </div>
+
+            <div class="contenido-habilidad css" id="scrollReveal">
+                <div class="skill-radius">
+                    <i class="fab fa-css3-alt" title="CSS3"></i>
+                </div>
+                <p class="texto-habilidad">CSS 3</p>
+            </div>
+
+            <div class="contenido-habilidad bootstrap" id="scrollReveal">
+                <div class="skill-radius">
+                    <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                </div>
+                <p class="texto-habilidad">Bootstrap</p>
+            </div>
+
+            <div class="contenido-habilidad sass" id="scrollReveal">
+                <div class="skill-radius">
+                    <i class="fab fa-sass" title="Sass"></i>
+                    
+                </div>
+                <p class="texto-habilidad">Sass</p>
+            </div>
+
+            <div class="contenido-habilidad bootstrap" id="scrollReveal">
+                <div class="skill-radius">
+                    <i class="fab fa-gulp"></i>
+                </div>
+                <p class="texto-habilidad">Gulp</p>
+            </div>  
+
+            <div class="contenido-habilidad javascript" id="scrollReveal">
+                <div class="skill-radius">
+                    <i class="fab fa-js" title="JavaScript"></i>
+                </div>
+                <p class="texto-habilidad">JavaScript</p>
+            </div>
+        </div>
+    </article>
+
+</section>
+
+{% endblock content %}
+
+{% include 'PortfolioWebApp/includes/footer.html' %}

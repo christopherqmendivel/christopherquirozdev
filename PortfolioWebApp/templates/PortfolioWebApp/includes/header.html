@@ -1,0 +1,30 @@
+{% load static %}
+<header class="header">
+    <div class="logo">
+        <a href="/"><img src="{% static 'PortfolioWebapp/img/logo.png' %}" class="logo" alt="Logotipo"></a>
+    </div>
+
+    <nav>
+        <ul class="menu-nav-links" id="menu-nav-links">
+            <li class="active"><a href="/">Inicio</a></li>
+            <li><a href="sobre-mi">Sobre Mí</a></li>
+            <li><a href="proyectos">Proyectos</a></li>
+            <li><a href="contacto">Contacto</a></li>
+
+            <div>
+                <li class="link-social"><a href="https://github.com/christopherqmendivel" target="_blank"><i
+                            class="fab fa-github" title="GitHub"></i></a></li>
+                            <li class="link-social"><a href="https://www.linkedin.com/in/christopher-quiroz-mendivel-74309090/"
+                                target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                <li class="link-social"><a href="https://twitter.com/MendivQ" target="_blank"><i
+                            class="fab fa-twitter" title="Twitter"></i></a></li>
+                <li class="link-social"><a href="https://www.instagram.com/chriscqm404/" target="_blank"
+                        title="Instagram"><i class="fab fa-instagram"></i></a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <div class="menu-btn">
+        <div class="menu-btn__burger"></div>
+    </div>
+</header>

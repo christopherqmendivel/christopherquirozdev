@@ -1,0 +1,58 @@
+{% extends 'PortfolioWebApp/includes/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <!-- Header -->
+    {% include 'PortfolioWebApp/includes/header.html' %}
+
+    <aside class="social">
+        <ul class="link-socials">
+            <div class="line-socials">
+                <hr>
+            </div>
+
+            <li class="link-social"><a href="https://github.com/christopherqmendivel" target="_blank"><i
+                        class="fab fa-github" title="GitHub"></i></a></li>
+            <li class="link-social"><a href="https://www.linkedin.com/in/christopher-quiroz-mendivel-74309090/"
+                    target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li class="link-social"><a href="https://twitter.com/MendivQ" target="_blank"><i class="fab fa-twitter"
+                        title="Twitter"></i></a></li>
+            <li class="link-social"><a href="https://www.instagram.com/chriscqm404/" target="_blank"
+                    title="Instagram"><i class="fab fa-instagram"></i></a>
+            </li>
+            <div class="line-socials">
+                <hr>
+            </div>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="perfil">
+            <div class="info_chris">
+                <span class="hello" id="hello">Hola, mi nombre es</span>
+                <h1 id="name">Christopher <span class="name">Quiroz</span></h1>
+
+                <div class="dev_chris">
+                    <img src="{% static 'PortfolioWebApp/img/developer.svg' %}" alt="image devloper">
+                </div>
+                <span class="info_dev" id="info_dev">Soy Desarrollador Frontend</span>
+
+
+                <div class="btn">
+                    <p class="btn_inicio"><a class="contacto" href="contacto.html">Contáctame&nbsp;</a></p>
+
+                    <p class="btn_inicio"><a class="proyect" href="proyectos.html">Ver proyectos&nbsp;</a></p>
+                </div>
+            </div>
+
+            <div class="imagen_chris_rpw" id="developer_image">
+                <img src="{% static 'PortfolioWebApp/img/developer.svg' %}" alt="image developer" title="Web Developer">
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+<script src="{% static 'PortfolioWebApp/js/app.js' %}"></script>
+{% endblock %}

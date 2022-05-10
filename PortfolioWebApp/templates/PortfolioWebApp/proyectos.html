@@ -1,0 +1,63 @@
+{% load static %}
+{% include 'PortfolioWebApp/includes/base.html' %}
+
+{% block content %}
+
+<!-- Header -->
+{% include 'PortfolioWebApp/includes/header.html' %}
+
+<section class="info_sobre_mi proyectos">
+    <div class="sobre_mi">
+        <h1 class="me">Proyectos</h1>
+        <div class="border-h1">
+            <div class="line-left">
+                <span class="line-left"></span>
+            </div>
+            <div class="icon-infinite">
+                <i class="fas fa-infinity"></i>
+            </div>
+
+            <div class="line-right">
+                <span class="line-right"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <ul class="m-galeria">
+        <li class="list active" data-filter="all">All</li>
+        <li class="list" data-filter="css">CSS</li>
+        <li class="list" data-filter="js">Javascript</li>
+        <li class="list" data-filter="api">API</li>
+    </ul>
+    <div class="seccion" id="seccion">
+        {% for proyecto in proyectos  %}
+            <div class="card" data-item="{{proyecto.skill}}">
+                <img src="{{proyecto.image.url}}" alt="{{proyecto.nombre}}" class="card-img">
+                <div class="card-body">
+                    <div class="proyecto">
+                        <h4 class="titulo">{{proyecto.nombre}}</h4>
+                        
+                        <a href="{{proyecto.repositorio}}" title="Ver repositorio" target="_blank"><i class="fab fa-github"></i></a>
+                        
+                    </div>
+                    <div class="hash-link">
+                        <div class="hash">
+                            <span class="categoria">
+                                {% for skill_hash in proyecto.skill_hash %}
+                                    #{{skill_hash}} 
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <a href="{{proyecto.netlify}}" title="Ver Proyecto" class="enlace-web" target="_blank"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}
+
+{% include 'PortfolioWebApp/includes/footer.html' %}
+
