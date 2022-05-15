@@ -22,7 +22,7 @@ menuresponsive.addEventListener('click', function () {
 });
 
 
-// Animación hamburguer
+// Animate hamburguer
 const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
 
@@ -49,7 +49,7 @@ const options = { // definimos opciones al momento de la intersección
 const inViewCallback = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) { // D evento/ así como la propiedad a usar
-      // Aplicamos el estilo en bae a la clase css
+      // Aplicamos el estilo en base a la clase css
       entry.target.classList.add('inview');
     } else {
       // OPCIONAL, en caso de acabar la intesección, podemos aplicar una siguiente acción
@@ -66,7 +66,7 @@ scrollReveal.forEach(e => {
 
 
 
-// Animaciones
+// Animate
 
 let animatemovil = document.querySelectorAll('.animate_m');
 let habilidades = document.querySelectorAll('.contenido-habilidad');
@@ -236,8 +236,7 @@ function initMap() {
       },
     ],
   });
-
-  const imageIcon = './img/logomapa.png';
+  const imageIcon = "static/PortfolioWebApp/img/logomapa.png";
   var icon = {
     url: imageIcon,
     scaledSize: new google.maps.Size(60, 60),
@@ -252,7 +251,7 @@ function initMap() {
 }
 
 
-// Filtrar galería
+// Filter galery
 
 window.addEventListener('DOMContentLoaded', () => {
   let list = document.querySelectorAll('.list');
