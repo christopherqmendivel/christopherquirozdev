@@ -1,5 +1,3 @@
-from distutils.command.upload import upload
-from tabnanny import verbose
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
@@ -12,5 +10,12 @@ class Proyectos(models.Model):
     repositorio = models.URLField(max_length=200, verbose_name="Repositorio URL", blank=True, null=True)
     skill_hash = ArrayField(models.CharField(max_length=20, blank=True), verbose_name="Tecnologías Usadas")
     netlify = models.URLField(max_length=200, verbose_name="Netlify URL", blank=True, null=True)
-    
+
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField(default='')    
+    asunto = models.CharField(max_length=100)
+    mensaje = models.TextField()
+
+
 
