@@ -1,5 +1,3 @@
-
-
 function navbarremoveactive() {
   const currentLocation = location.href;
   const menuItem = document.querySelectorAll('ul.menu-nav-links li a');
@@ -281,11 +279,45 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Send Form
+function sendForm() {
+  const form = document.querySelector('form');
+  const spinner = document.querySelector('#spinner');
+  spinner.style.display = 'block';
 
+  const mensajeEviado = document.querySelector('.exito');
 
+  setTimeout(() => {
+    spinner.style.display = 'none';
+    mensajeEviado ? mensajeEviado.style.display = 'block' : '';
+
+    setTimeout(() => {
+      mensajeEviado.remove();
+      form.reset();
+    }, 4000);
+  }, 3000);
+}
+
+// AJAX FORM
+
+$(document).on('submit', '#form', function (e) {
+  e.preventDefault();
+
+  $.ajax({
+    type: 'POST',
+    url: 'sendform',
+    data: {
+      nombre: $('#nombre').val(),
+      email: $('#email').val(),
+      asunto: $('#asunto').val(),
+      mensaje: $('#mensaje').val(),
+      csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+    },
+    success: function () {
+      sendForm();
+    }
+  })
+});
 
 // Proyectos
 // HTML - CSS - JS // Migrate to Django BD
-
-
-
