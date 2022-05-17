@@ -1595,7 +1595,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 60rem;
+  margin-top: 6rem;
 }
 footer ul.link-social {
   display: flex;
@@ -1608,9 +1608,7 @@ footer ul.link-social {
 }
 
 @media (min-width: 768px) {
-  footer ul.link-social {
-    margin: 0.5rem;
-    width: 20%;
+  footer {
     margin-top: 6rem;
   }
 }
