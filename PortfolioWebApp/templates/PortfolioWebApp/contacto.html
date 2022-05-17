@@ -1,4 +1,5 @@
 {% load static %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {% include 'PortfolioWebApp/includes/base.html' %}
 
 
@@ -15,30 +16,37 @@
                     ayudarte</span>
                 hoy?</p>
 
-            <form id="enviar-mail" method="post"> {% csrf_token %}
+            <form id="form" method="post">{% csrf_token %}
 
                 <div class="ipt_animation">
-                    <input type="text" class="nombre" id="nombre" placeholder="Nombre" name="nombre">
+                    <input type="text" name="nombre" class="nombre" id="nombre" placeholder="Nombre">
+                </div>
+                <div class="ipt_animation">
+                    <input type="email" name="email" class="email correo" id="email" placeholder="Correo">
+                </div>
+                <div class="ipt_animation">
+                    <input type="text" name="asunto" class="asunto" id="asunto" placeholder="Asunto">
+                </div>
+                <div class="ipt_animation">
+                    <textarea name="mensaje" class="mensaje" placeholder="Mensaje" id="mensaje" cols="30" rows="10"></textarea>
                 </div>
 
-                <div class="ipt_animation">
-                    <input type="email" class="correo" id="email" placeholder="Correo" name="email">
-                </div>
-
-                <div class="ipt_animation">
-                    <input type="text" class="asunto" id="asunto" placeholder="Asunto" name="asunto">
-                </div>
-
-                <div class="ipt_animation">
-                    <textarea name="mensaje" class="mensaje" placeholder="Mensaje" id="mensaje-textarea" cols="30"
-                        rows="10"></textarea>
-                </div>
+                <div class="sk-chase" id="spinner">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                  </div>
 
                 <div class="btnform">
+                    <p class="exito">Mensaje Enviado</p>
                     <button type="submit" class="btnEnviar" id="btnEnviar">Enviar</button>
                 </div>
             </form>
-            <p class="exito">El mensaje se envió correctamente</p>
+
+
         </div>
 
         <div class="map animate fadeInUp" id="scrollReveal">
@@ -67,4 +75,5 @@
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7m9FFksIne_ByU1DPdA7oHN_DPkugyt4&callback=initMap&v=weekly&channel=2">
 </script>
+
 {% endblock extra_js %}
