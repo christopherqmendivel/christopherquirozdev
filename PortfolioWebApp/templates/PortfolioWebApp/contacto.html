@@ -62,18 +62,33 @@
 </div>
 
 
+<footer class="sobre-mi animate fadeInUp f-contact" id="scrollReveal">
+    <ul class="link-social">
+        <li class="link-social"><a href="https://github.com/akem1x" target="_blank"><i class="fab fa-github"
+                    title="GitHub"></i></a></li>
+        <li class="link-social"><a href="https://www.linkedin.com/in/christopher-quiroz-mendivel-74309090/"
+                target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li class="link-social"><a href="https://twitter.com/MendivQ" target="_blank"><i class="fab fa-twitter"
+                    title="Twitter"></i></a></li>
+        <li class="link-social"><a href="https://www.instagram.com/chriscqm404/" target="_blank"
+                title="Instagram"><i class="fab fa-instagram"></i></a>
+        </li>
+    </ul>
+    <p class="_info"> Diseño & Desarrollo por Christopher Quiroz</p>
+</footer>
 
 {% endblock content %}
 
 
-{% include 'PortfolioWebApp/includes/footer.html' %}
 
 {% block extra_js %}
 <!-- Script google map api -->
 
+<script src="{% static 'PortfolioWebApp/js/app.js' %}"></script> 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7m9FFksIne_ByU1DPdA7oHN_DPkugyt4&callback=initMap&v=weekly&channel=2">
 </script>
+
 
 {% endblock extra_js %}
