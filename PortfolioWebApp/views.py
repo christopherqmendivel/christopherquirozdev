@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
-from PortfolioWebApp.models import Contacto
+from PortfolioWebApp.models import Contacto, Proyectos
 
 # Create your views here.
 
@@ -16,7 +16,7 @@ def sobre_mi(request):
 
 def proyectos(request):
 
-    proyectosLista = Contacto.Proyectos.objects.all()
+    proyectosLista = Proyectos.objects.all()
     return render(request, 'PortfolioWebApp/proyectos.html', {"proyectos": proyectosLista})
 
 def contacto(request):
