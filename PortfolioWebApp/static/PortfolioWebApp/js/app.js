@@ -1,3 +1,17 @@
+window.addEventListener('DOMContentLoaded', () => {
+
+  filtrarGaleria();
+  animatescrollReveal();
+  animateScroll();
+  menuHamburguer();
+  ajaxContact();
+})
+
+
+  
+// Menú RPWD
+showHide();
+
 function navbarremoveactive() {
   const currentLocation = location.href;
   const menuItem = document.querySelectorAll('ul.menu-nav-links li a');
@@ -11,89 +25,100 @@ function navbarremoveactive() {
 
 
 // Menu hamburguer
+function menuHamburguer() {
+  const menuresponsive = document.querySelector('.menu-btn');
+  const nav = document.querySelector('nav');
 
-const menuresponsive = document.querySelector('.menu-btn');
-const nav = document.querySelector('nav');
-
-menuresponsive.addEventListener('click', function () {
-  nav.classList.toggle('active');
-});
-
-
-// Animate hamburguer
-const menuBtn = document.querySelector('.menu-btn');
-let menuOpen = false;
-
-menuBtn.addEventListener('click', () => {
-  if (!menuOpen) {
-    menuBtn.classList.add('open')
-    menuOpen = true;
-  } else {
-    menuBtn.classList.remove('open')
-    menuOpen = false;
-  }
-});
+  menuresponsive.addEventListener('click', function () {
+    nav.classList.toggle('active');
+  });
 
 
-// IntersectionObserver
+  // Animate hamburguer
+  const menuBtn = document.querySelector('.menu-btn');
+  let menuOpen = false;
 
-let scrollReveal = document.querySelectorAll('#scrollReveal'); // Elementos que iniciarán al momento de la acción
-
-const options = { // definimos opciones al momento de la intersección
-  threshold: 0.5,
-  delay: 150
-}
-
-const inViewCallback = entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { // D evento/ así como la propiedad a usar
-      // Aplicamos el estilo en base a la clase css
-      entry.target.classList.add('inview');
+  menuBtn.addEventListener('click', () => {
+    if (!menuOpen) {
+      menuBtn.classList.add('open')
+      menuOpen = true;
     } else {
-      // OPCIONAL, en caso de acabar la intesección, podemos aplicar una siguiente acción
+      menuBtn.classList.remove('open')
+      menuOpen = false;
     }
   });
 }
 
-// Instancia del callback que contiene nuestros elementos y acciones, usando la clases(css) que definimos and actions, using the options we defined
-let observer = new IntersectionObserver(inViewCallback, options);
-
-scrollReveal.forEach(e => {
-  observer.observe(e) // ejecutamos el observador 
-});
 
 
+// IntersectionObserver
+function animatescrollReveal() {
 
-// Animate
+  let scrollReveal = document.querySelectorAll('#scrollReveal'); // Elementos que iniciarán al momento de la acción
 
-let animatemovil = document.querySelectorAll('.animate_m');
-let habilidades = document.querySelectorAll('.contenido-habilidad');
-let habilidad = document.querySelector('div.habilidad');
+  const options = { // definimos opciones al momento de la intersección
+    threshold: 0.5,
+    delay: 150
+  }
 
-if (window.innerWidth < 768) {
+  const inViewCallback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { // D evento/ así como la propiedad a usar
+        // Aplicamos el estilo en base a la clase css
+        entry.target.classList.add('inview');
+      } else {
+        // OPCIONAL, en caso de acabar la intesección, podemos aplicar una siguiente acción
+      }
+    });
+  }
 
-  animatemovil.forEach(animate => {
-    habilidad.classList.remove('animate');
-    animate.classList.add("animate", "fadeInUp");
-  });
+  // Instancia del callback que contiene nuestros elementos y acciones, usando la clases(css) que definimos and actions, using the options we defined
+  let observer = new IntersectionObserver(inViewCallback, options);
 
-  habilidades.forEach(animateUp => {
-    animateUp.id = "scrollReveal";
-    animateUp.classList.add("animate", "fadeInUp");
+  scrollReveal.forEach(e => {
+    observer.observe(e) // ejecutamos el observador 
   });
 }
 
 
+
+// Animate
+function animateScroll() {
+
+
+  let animatemovil = document.querySelectorAll('.animate_m');
+  let habilidades = document.querySelectorAll('.contenido-habilidad');
+  let habilidad = document.querySelector('div.habilidad');
+
+  if (window.innerWidth < 768) {
+
+    animatemovil.forEach(animate => {
+      habilidad.classList.remove('animate');
+      animate.classList.add("animate", "fadeInUp");
+    });
+
+    habilidades.forEach(animateUp => {
+      animateUp.id = "scrollReveal";
+      animateUp.classList.add("animate", "fadeInUp");
+    });
+  }
+}
+
+
+
 // Hide Header on Scroll
-let lastScrollTop = 0;
-let header = document.querySelector('header');
+function showHide() {
 
-if (window.innerWidth >= 992) {
-  window.addEventListener("scroll", function () {
+  let lastScrollTop = 0;
+  let header = document.querySelector('header');
 
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    scrollTop > lastScrollTop ? header.style.top = "-80px" : header.style.top = "";
-  });
+  if (window.innerWidth >= 992) {
+    window.addEventListener("scroll", function () {
+
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollTop > lastScrollTop ? header.style.top = "-80px" : header.style.top = "";
+    });
+  }
 }
 
 
@@ -251,7 +276,10 @@ function initMap() {
 
 // Filter galery
 
-window.addEventListener('DOMContentLoaded', () => {
+
+
+function filtrarGaleria() {
+
   let list = document.querySelectorAll('.list');
   let itemBox = document.querySelectorAll('.card');
 
@@ -277,7 +305,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
 
   }
-});
+}
 
 // Send Form
 function sendForm() {
@@ -298,26 +326,37 @@ function sendForm() {
   }, 3000);
 }
 
-// AJAX FORM
+function ajaxContact() {
 
-$(document).on('submit', '#form', function (e) {
-  e.preventDefault();
+  pathname = window.location.pathname;
 
-  $.ajax({
-    type: 'POST',
-    url: 'sendform',
-    data: {
-      nombre: $('#nombre').val(),
-      email: $('#email').val(),
-      asunto: $('#asunto').val(),
-      mensaje: $('#mensaje').val(),
-      csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-    },
-    success: function () {
-      sendForm();
-    }
-  })
-});
+  if (pathname == '/contacto') {
+
+    // AJAX FORM
+    $(document).on('submit', '#form', function (e) {
+      e.preventDefault();
+
+      $.ajax({
+        type: 'POST',
+        url: 'sendform',
+        data: {
+          nombre: $('#nombre').val(),
+          email: $('#email').val(),
+          asunto: $('#asunto').val(),
+          mensaje: $('#mensaje').val(),
+          csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+        },
+        success: function () {
+          sendForm();
+        }
+      })
+    });
+
+  }
+}
+
+
+
 
 // Proyectos
 // HTML - CSS - JS // Migrate to Django BD
