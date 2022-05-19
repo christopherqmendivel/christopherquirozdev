@@ -1579,8 +1579,8 @@ p.error {
 }
 
 p.exito {
-  background-color: green;
-  color: white;
+  background-color: #25ca7f;
+  color: white !important;
   text-align: center;
   padding: 1rem 5rem !important;
   flex: 1;
@@ -1595,8 +1595,20 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 60rem;
+  margin-top: 6rem;
 }
+
+
+.f-contact {
+  margin-top: 55rem;
+}
+
+@media (min-width: 768px) {
+  .f-contact  {
+    margin-top: 6rem;
+  }
+}
+
 footer ul.link-social {
   display: flex;
   justify-content: space-between;
@@ -1607,11 +1619,6 @@ footer ul.link-social {
   
 }
 
-@media (min-width: 768px) {
-  footer {
-    margin-top: 6rem;
-  }
-}
 
 @media (min-width: 992px) {
   footer ul.link-social {
