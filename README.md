@@ -1,2 +1,2 @@
 # Portfolip personal
-![Diseño](./design/appweather-design.jpg)
+![Diseño](./design/portfolio-inicio.png)
