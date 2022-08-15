@@ -23,8 +23,8 @@ Mi portfolio se encuentra realizadas con las tecnologías mencionadas líneas ab
   
  - Proyectos:
     - Los proyectos se encuentran almacenados en la BD (imagen, titulo, hashtag tecnologías, url github, url despliegue).
-    - En base al punto anterior, renderizo los proyectos obtenidos desde la BD, permitiendo al usuario acceder al repositorio o al despliegue del mismo.
-    - Así como filtrar los proyectos, a traves de las tecnologias (All, css, js, api). 
+    - En base al punto anterior, renderizo los proyectos obtenidos desde la BD, permitiendo al usuario acceder al repositorio y despliegue del mismo.
+    - Así como filtrar proyectos puntuales, por tecnologias: (All, css, js, api). 
   
 - Contacto:
     - Formulario a través de ajax.
