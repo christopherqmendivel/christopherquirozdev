@@ -14,7 +14,7 @@ Mi portfolio se encuentra realizadas con las tecnologías mencionadas líneas ab
   
 
 - Inicio:
-  - La página index, representa una breve descripción sobre mí, permitiendo al usuario obtener mayor detalle a través de los enlaces.
+  - La página index, representa una breve descripción sobre mí, permitiendo al usuario obtener mayor detalle a través de los botones o el menú.
 
 - Sobre Mí:
   - Descripción en base a las experiencias profesionales realizadas, así como el giro profesional por dedicarme al sector TI.
