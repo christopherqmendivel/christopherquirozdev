@@ -4,7 +4,7 @@ from PortfolioWebApp.models import Contacto, Proyectos
 # Register your models here.
 
 class ClientesAdmin(admin.ModelAdmin):
-    list_display = ("id", "skill", "image", "nombre", "repositorio", "skill_hash", "netlify")
+    list_display = ("id", "image_tag", "skill", "image", "nombre", "repositorio", "skill_hash", "netlify")
     search_fields = ("nombre", )
     list_filter = ('skill', )
 
