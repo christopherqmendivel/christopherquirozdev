@@ -1015,7 +1015,7 @@ article.text_sobre_mi .button-group:hover .icon-cv {
 }
 
 .fa-arrow-circle-down {
-  line-height: 1.42;
+  line-height: inherit;
 }
 
 article.text_sobre_mi .button-group .text {
