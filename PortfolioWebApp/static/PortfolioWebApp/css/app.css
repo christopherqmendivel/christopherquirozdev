@@ -1013,6 +1013,11 @@ article.text_sobre_mi .button-group {
 article.text_sobre_mi .button-group:hover .icon-cv {
   transform: rotateY(0deg);
 }
+
+.fa-arrow-circle-down {
+  line-height: 1.42;
+}
+
 article.text_sobre_mi .button-group .text {
   border: 1px solid #25ca7f;
   color: #8892b0;
