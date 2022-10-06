@@ -358,5 +358,5 @@ function ajaxContact() {
 
 
 
-// Proyectos
+// PROYECTS
 // HTML - CSS - JS // Migrate to Django BD
